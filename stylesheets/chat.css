@@ -1,0 +1,941 @@
+ html {
+	/* -ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%; */
+	height: 100%;
+} 
+
+body {
+	-webkit-font-smoothing: antialiased;
+	line-height: 1.6;
+	font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB",
+		"Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+	height: 100%;
+    overflow: hidden;
+}
+
+input, textarea, button, a {
+	outline: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, fieldset, textarea {
+	margin: 0;
+}
+
+fieldset, legend, textarea, input {
+	padding: 0;
+}
+
+ul, ol {
+	padding-left: 0;
+	list-style-type: none;
+}
+
+a img, fieldset {
+	border: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup,
+	main, nav, section, summary {
+	display: block;
+}
+
+audio, canvas, video {
+	display: inline-block;
+}
+
+audio
+:not
+ 
+(
+[
+controls
+]
+ 
+)
+{
+display
+:
+ 
+none
+;
+
+	
+height
+:
+ 
+0;
+}
+pre {
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	white-space: pre-wrap;
+	word-break: initial;
+}
+
+.hide {
+	display: none;
+}
+
+svg
+:not
+ 
+(
+:root
+ 
+)
+{
+overflow
+:
+ 
+hidden
+;
+
+
+}
+figure {
+	margin: 0;
+}
+
+button, input, select, textarea {
+	font-family: inherit;
+	font-size: 100%;
+	margin: 0;
+}
+
+button, select {
+	text-transform: none;
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+	cursor: pointer;
+	-webkit-appearance: button;
+}
+
+button[disabled], html input[disabled] {
+	cursor: default;
+}
+
+input[type=checkbox], input[type=radio] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+input[type=search] {
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+}
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration
+	{
+	-webkit-appearance: none;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+	resize: none;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill
+	{
+	box-shadow: inset 0 0 0 1000px #fff;
+	-moz-box-shadow: inset 0 0 0 1000px #fff;
+	-webkit-box-shadow: inset 0 0 0 1000px #fff;
+}
+
+select {
+	border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+img {
+	vertical-align: middle;
+}
+
+a.btn {
+	text-decoration: none;
+}
+
+.btn {
+	display: inline-block;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	padding: 2px 4px;
+	font-size: 14px;
+	height: 20px;
+	line-height: 20px;
+	margin-top: 3px;
+	cursor: pointer;
+}
+
+.btn_send {
+	background-color: #5CB700;
+	color: white;
+	display: none;
+}
+
+.clearfix:after {
+	content: ' ';
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+.main {
+	height: 100%;
+}
+
+.main_inner {
+	height: 100%;
+	overflow: hidden;
+}
+
+.panel {
+	position: relative;
+	width: 0px;
+	height: 100%;
+	float: left;
+	background: #2e3238;
+}
+
+/*信息*/
+.box {
+	position: relative;
+	background-color: #eee;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-flow: column;
+}
+
+.box_hd {
+	height: 0px;
+}
+
+.box_bd {
+	padding: 10px 10px 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	flex: 1;
+}
+
+.message {
+	margin-bottom: 16px;
+	float: left;
+	width: 100%;
+}
+
+.message.me {
+	float: right;
+	text-align: right;
+	clear: right;
+}
+
+.message .avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	float: left;
+	cursor: pointer;
+}
+
+.message.me .avatar {
+	float: right;
+}
+
+.message .nickname {
+	font-weight: 400;
+	padding-left: 10px;
+	font-size: 12px;
+	height: 22px;
+	line-height: 24px;
+	color: #4f4f4f;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal;
+}
+
+.message .nickname .time {
+	margin-left: 10px;
+}
+
+.message.me .nickname {
+	padding-right: 10px;
+}
+
+.message.me .nickname .time {
+	margin-right: 10px;
+}
+
+.message .content {
+	overflow: hidden;
+}
+
+.bubble {
+	max-width: 70%;
+	min-height: 1em;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	text-align: left;
+	font-size: 14px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	margin: 0 10px;
+}
+
+.bubble.bubble_default {
+	background-color: #fff;
+}
+
+.bubble:before, .bubble:after {
+	position: absolute;
+	top: 14px;
+	border: 6px solid transparent;
+	content: " ";
+}
+
+.bubble.left:before, .bubble.left:after {
+	right: 100%;
+}
+
+.bubble.left:after {
+	border-right-color: #FFF;
+	border-right-width: 4px;
+}
+
+.bubble.right:before, .bubble.right:after {
+	left: 100%;
+}
+
+.bubble.right:after {
+	border-left-color: #FFF;
+}
+
+.bubble.bubble_primary {
+	background-color: #b2e281;
+}
+
+.bubble.bubble_primary.left:after {
+	border-right-color: #b2e281;
+	border-right-width: 4px;
+}
+
+.bubble.bubble_primary.right:after {
+	border-left-color: #b2e281;
+	border-left-width: 4px;
+}
+
+.bubble.bubble_primary.right.arrow_primary:before {
+	border-left-color: #b2e281;
+	border-left-width: 4px;
+}
+
+.bubble.bubble_primary.right.arrow_primary:after {
+	border-left-color: #fff;
+	border-left-width: 4px;
+	margin-left: -2px;
+}
+
+.bubble.no_arrow {
+	background-color: transparent;
+}
+
+.bubble.no_arrow:before, .bubble.no_arrow:after {
+	display: none;
+}
+
+.bubble_cont {
+	word-wrap: break-word;
+	word-break: break-all;
+	min-height: 25px;
+}
+
+.bubble_cont img {
+	vertical-align: middle;
+}
+
+.bubble_cont .plain {
+	padding: 9px 13px;
+}
+
+.bubble_cont .picture {
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	overflow: hidden;
+	position: relative;
+}
+
+.bubble_cont .picture img {
+	display: block;
+	cursor: pointer;
+	max-width: 100%;
+}
+
+.box_ft {
+	background-color: white;
+	padding: 0 6px;
+	border-top: 1px solid #ccc;
+}
+
+.box_ft_hd {
+	display: flex;
+}
+
+.box_ft_hd .eaitWrap {
+	flex: 1;
+	padding-bottom: 5px;
+}
+
+.box_ft_hd .editArea {
+	overflow-y: auto;
+	overflow-x: hidden;
+	outline: 0;
+	border-bottom: 1px solid #ababab;
+	font-size: 14px;
+	padding: 0 5px;
+	max-height: 2em;
+	line-height: 1.4;
+	margin-top: 5px;
+}
+
+.web_wechat_face {
+	background: url(../images/chat/smile_icon.png) no-repeat;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	display: inline-block;
+	background-size: 65%;
+	background-position: 6px 6px;
+}
+
+.web_wechat_pic {
+	background: url(../images/chat/smile_icon.png) 0 -1638px;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	display: inline-block;
+	margin: 0px 3px;
+}
+
+.exp_hd {
+	overflow: hidden;
+	background-color: #F2F2F2;
+}
+
+.exp_hd_item {
+	float: left;
+}
+
+.exp_hd_item.active {
+	background-color: #fff;
+	border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-webkit-border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	-webkit-border-top-right-radius: 4px;
+}
+
+.exp_hd_item a {
+	display: block;
+	text-decoration: none;
+	color: #333;
+	padding: 5px 10px;
+	font-size: 14px;
+}
+
+.exp_bd {
+	overflow: auto;
+	background-color: #fff;
+}
+
+.exp_cont {
+	display: none;
+	height: 200px;
+	padding: 10px 0;
+	min-height: 50px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.exp_cont.active {
+	display: block;
+}
+
+.eaitWrap .qqface {
+	border: 0;
+}
+
+/*信息end*/
+
+/*表情*/
+.qqface {
+	float: left;
+	font-size: 0;
+	text-indent: -999em;
+	border-bottom: 1px solid #F0F0F0;
+	border-right: 1px solid #F0F0F0;
+	cursor: pointer;
+	background: url(../images/chat/qqSmilies2e4e03.png) top left no-repeat;
+	width: 28px;
+	height: 28px;
+	display: inline;
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: top;
+	zoom: 1;
+	*display: inline;
+}
+
+.qqface0 {
+	background-position: 2px 3px;
+}
+
+.qqface1 {
+	background-position: -23px 3px;
+}
+
+.qqface2 {
+	background-position: -48px 3px;
+}
+
+.qqface3 {
+	background-position: -72px 3px;
+}
+
+.qqface4 {
+	background-position: -97px 3px;
+}
+
+.qqface5 {
+	background-position: -124px 3px;
+}
+
+.qqface6 {
+	background-position: -148px 3px;
+}
+
+.qqface7 {
+	background-position: -173px 3px;
+}
+
+.qqface8 {
+	background-position: -198px 3px;
+}
+
+.qqface9 {
+	background-position: -223px 3px;
+}
+
+.qqface10 {
+	background-position: -247px 3px;
+}
+
+.qqface11 {
+	background-position: -272px 3px;
+}
+
+.qqface12 {
+	background-position: -298px 3px;
+}
+
+.qqface13 {
+	background-position: -323px 3px;
+}
+
+.qqface14 {
+	background-position: -348px 3px;
+}
+
+.qqface15 {
+	background-position: 2px -22px;
+}
+
+.qqface16 {
+	background-position: -23px -22px;
+}
+
+.qqface17 {
+	background-position: -48px -22px;
+}
+
+.qqface18 {
+	background-position: -73px -22px;
+}
+
+.qqface19 {
+	background-position: -97px -22px;
+}
+
+.qqface20 {
+	background-position: -124px -22px;
+}
+
+.qqface21 {
+	background-position: -148px -22px;
+}
+
+.qqface22 {
+	background-position: -173px -22px;
+}
+
+.qqface23 {
+	background-position: -198px -22px;
+}
+
+.qqface24 {
+	background-position: -223px -22px;
+}
+
+.qqface25 {
+	background-position: -247px -22px;
+}
+
+.qqface26 {
+	background-position: -271px -22px;
+}
+
+.qqface27 {
+	background-position: -298px -22px;
+}
+
+.qqface28 {
+	background-position: -323px -22px;
+}
+
+.qqface29 {
+	background-position: -348px -22px;
+}
+
+.qqface30 {
+	background-position: 2px -48px;
+}
+
+.qqface31 {
+	background-position: -23px -48px;
+}
+
+.qqface32 {
+	background-position: -47px -48px;
+}
+
+.qqface33 {
+	background-position: -74px -48px;
+}
+
+.qqface34 {
+	background-position: -99px -48px;
+}
+
+.qqface35 {
+	background-position: -124px -48px;
+}
+
+.qqface36 {
+	background-position: -148px -48px;
+}
+
+.qqface37 {
+	background-position: -173px -48px;
+}
+
+.qqface38 {
+	background-position: -198px -48px;
+}
+
+.qqface39 {
+	background-position: -223px -48px;
+}
+
+.qqface40 {
+	background-position: -249px -48px;
+}
+
+.qqface41 {
+	background-position: -273px -48px;
+}
+
+.qqface42 {
+	background-position: -298px -48px;
+}
+
+.qqface43 {
+	background-position: -323px -48px;
+}
+
+.qqface44 {
+	background-position: -348px -48px;
+}
+
+.qqface45 {
+	background-position: 2px -72px;
+}
+
+.qqface46 {
+	background-position: -23px -72px;
+}
+
+.qqface47 {
+	background-position: -49px -72px;
+}
+
+.qqface48 {
+	background-position: -73px -72px;
+}
+
+.qqface49 {
+	background-position: -97px -72px;
+}
+
+.qqface50 {
+	background-position: -124px -72px;
+}
+
+.qqface51 {
+	background-position: -148px -72px;
+}
+
+.qqface52 {
+	background-position: -173px -72px;
+}
+
+.qqface53 {
+	background-position: -198px -72px;
+}
+
+.qqface54 {
+	background-position: -222px -72px;
+}
+
+.qqface55 {
+	background-position: -248px -72px;
+}
+
+.qqface56 {
+	background-position: -273px -72px;
+}
+
+.qqface57 {
+	background-position: -298px -72px;
+}
+
+.qqface58 {
+	background-position: -323px -72px;
+}
+
+.qqface59 {
+	background-position: -348px -72px;
+}
+
+.qqface60 {
+	background-position: 2px -97px;
+}
+
+.qqface61 {
+	background-position: -24px -97px;
+}
+
+.qqface62 {
+	background-position: -47px -97px;
+}
+
+.qqface63 {
+	background-position: -72px -97px;
+}
+
+.qqface64 {
+	background-position: -97px -97px;
+}
+
+.qqface65 {
+	background-position: -124px -97px;
+}
+
+.qqface66 {
+	background-position: -148px -97px;
+}
+
+.qqface67 {
+	background-position: -173px -97px;
+}
+
+.qqface68 {
+	background-position: -198px -97px;
+}
+
+.qqface69 {
+	background-position: -223px -97px;
+}
+
+.qqface70 {
+	background-position: -247px -97px;
+}
+
+.qqface71 {
+	background-position: -272px -97px;
+}
+
+.qqface72 {
+	background-position: -298px -97px;
+}
+
+.qqface73 {
+	background-position: -323px -97px;
+}
+
+.qqface74 {
+	background-position: -348px -97px;
+}
+
+.qqface75 {
+	background-position: 2px -122px;
+}
+
+.qqface76 {
+	background-position: -24px -122px;
+}
+
+.qqface77 {
+	background-position: -48px -122px;
+}
+
+.qqface78 {
+	background-position: -74px -122px;
+}
+
+.qqface79 {
+	background-position: -97px -122px;
+}
+
+.qqface80 {
+	background-position: -123px -122px;
+}
+
+.qqface81 {
+	background-position: -148px -122px;
+}
+
+.qqface82 {
+	background-position: -173px -122px;
+}
+
+.qqface83 {
+	background-position: -198px -122px;
+}
+
+.qqface84 {
+	background-position: -223px -122px;
+}
+
+.qqface85 {
+	background-position: -247px -122px;
+}
+
+.qqface86 {
+	background-position: -273px -122px;
+}
+
+.qqface87 {
+	background-position: -298px -122px;
+}
+
+.qqface88 {
+	background-position: -323px -122px;
+}
+
+.qqface89 {
+	background-position: -348px -122px;
+}
+
+.qqface90 {
+	background-position: 2px -148px;
+}
+
+.qqface91 {
+	background-position: -23px -148px;
+}
+
+.qqface92 {
+	background-position: -48px -148px;
+}
+
+.qqface93 {
+	background-position: -72px -148px;
+}
+
+.qqface94 {
+	background-position: -97px -148px;
+}
+
+.qqface95 {
+	background-position: -124px -148px;
+}
+
+.qqface96 {
+	background-position: -148px -148px;
+}
+
+.qqface97 {
+	background-position: -173px -148px;
+}
+
+.qqface98 {
+	background-position: -198px -148px;
+}
+
+.qqface99 {
+	background-position: -223px -148px;
+}
+
+.qqface100 {
+	background-position: -247px -148px;
+}
+
+.qqface101 {
+	background-position: -272px -148px;
+}
+
+.qqface102 {
+	background-position: -298px -148px;
+}
+
+.qqface103 {
+	background-position: -325px -148px;
+}
+
+.qqface104 {
+	background-position: -350px -148px;
+}
+
+/*表情end*/
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	background-color: #c3c3c3;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
